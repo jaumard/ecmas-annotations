@@ -1,11 +1,3 @@
-# ecmas-annotations 
-[![Gitter][gitter-image]][gitter-url]
-[![NPM version][npm-image]][npm-url]
-[![NPM downloads][npm-download]][npm-url]
-[![Build status][ci-image]][ci-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Code Climate][codeclimate-image]][codeclimate-url]
-
 ## Overview
 
 This is a Node.js library which allows you to add annotations describing metdata data
@@ -38,11 +30,11 @@ Example:
 ## Installation
 Need Node >= 4.0.0
 
-    > npm install ecmas-annotations
+    > npm install tzero-annotations
 
 ## Usage
 
-Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tree/master/example) (`node main.js` to test is). 
+Full example in [example folder](https://github.com/TerraZero/tzero-annotations/tree/master/example) (`node main.js` to test is). 
 
 ### Create an Annotation
 
@@ -156,8 +148,5 @@ Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tr
     @MyAnnotation(foo=[@MyNestedAnnotation("nested 1"), @MyNestedAnnotation("nested 2")])
 
 ## License
-[MIT](https://github.com/jaumard/ecmas-annotations/blob/master/LICENSE)
-
-[npm-image]: https://img.shields.io/npm/v/ecmas-annotations.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/tzero-annotations
+[MIT](https://github.com/TerraZero/tzero-annotations/blob/master/LICENSE)
 
