@@ -1,7 +1,7 @@
 {
-  "name": "ecmas-annotations",
+  "name": "tzero-annotations",
   "version": "1.0.2",
-  "description": "Annotation parser library for ES2014/ES2015, ES5/ES6",
+  "description": "Annotation parser library for ES2014/ES2015, ES5/ES6 fork from ecmas-annotations",
   "directories": {
     "test": "test"
   },
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jaumard/ecmas-annotations.git"
+    "url": "git://github.com/TerraZero/tzero-annotations.git"
   },
   "keywords": [
     "annotation",
@@ -20,11 +20,11 @@
     "es6",
     "es2015"
   ],
-  "author": "Jimmy Aumard",
+  "author": "TerraZero",
   "contributors": [
     {
-      "name": "Jimmy Aumard",
-      "email": "jimmy.aumard@gmail.com"
+      "name": "TerraZero",
+      "email": "terrahen@web.de"
     }
   ],
   "license": "MIT",
