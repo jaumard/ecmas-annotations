@@ -49,7 +49,7 @@ Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tr
     // my-constructor-annotation.js
     // ----------------------------
     'use strict'
-    const Annotation = require('esmac-annotations').Annotation;
+    const Annotation = require('tzero-annotations').Annotation;
 
     module.exports = class MyConstructorAnnotation extends Annotation {
 
@@ -68,20 +68,6 @@ Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tr
          */
         constructor(data, filePath){
           super(data, filePath)
-          /**
-           * The main value
-           *
-           * @type {String}
-           */
-          value = 'default value'
-  
-          /**
-           * An additional attribute
-           *
-           * @type {String}
-           */
-          sample = 'default value for sample'
-        
         }
         
         /**
@@ -92,7 +78,8 @@ Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tr
          * @return {void}
          */
         init: function(data){
-            // do something with data
+          // do something with data
+          this.value = data.value || "default value";
         }
         
     });
@@ -114,7 +101,7 @@ Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tr
     // ------------
 
     const path = require('path')
-    const annotations = require('ecmas-annotations')
+    const annotations = require('tzero-annotations')
 
     // create the registry
     const registry = new annotations.Registry()
@@ -126,7 +113,7 @@ Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tr
     const reader = new annotations.Reader(registry)
 
     // parse the annotations from a file, default parse ES6 file, Reader.ES5 to force ES5
-    reader.parse(path.join(__dirname, 'my-sample.js'), Reader.ES6)
+    reader.parse(path.join(__dirname, 'my-sample.js'), annotations.Reader.ES6)
 
     // get the annotations
     const definitionAnnotations = reader.definitionAnnotations
@@ -172,14 +159,5 @@ Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tr
 [MIT](https://github.com/jaumard/ecmas-annotations/blob/master/LICENSE)
 
 [npm-image]: https://img.shields.io/npm/v/ecmas-annotations.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/ecmas-annotations
-[npm-download]: https://img.shields.io/npm/dt/ecmas-annotations.svg
-[ci-image]: https://travis-ci.org/jaumard/ecmas-annotations.svg?branch=master
-[ci-url]: https://travis-ci.org/jaumard/ecmas-annotations
-[daviddm-image]: http://img.shields.io/david/jaumard/ecmas-annotations.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/jaumard/ecmas-annotations
-[codeclimate-image]: https://img.shields.io/codeclimate/github/jaumard/ecmas-annotations.svg?style=flat-square
-[codeclimate-url]: https://codeclimate.com/github/jaumard/ecmas-annotations
-[gitter-image]: http://img.shields.io/badge/+%20GITTER-JOIN%20CHAT%20%E2%86%92-1DCE73.svg?style=flat-square
-[gitter-url]: https://gitter.im/jaumard/ecmas-annotations
+[npm-url]: https://npmjs.org/package/tzero-annotations
 
