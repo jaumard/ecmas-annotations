@@ -1,11 +1,3 @@
-# ecmas-annotations 
-[![Gitter][gitter-image]][gitter-url]
-[![NPM version][npm-image]][npm-url]
-[![NPM downloads][npm-download]][npm-url]
-[![Build status][ci-image]][ci-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Code Climate][codeclimate-image]][codeclimate-url]
-
 ## Overview
 
 This is a Node.js library which allows you to add annotations describing metdata data
@@ -38,18 +30,18 @@ Example:
 ## Installation
 Need Node >= 4.0.0
 
-    > npm install ecmas-annotations
+    > npm install tzero-annotations
 
 ## Usage
 
-Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tree/master/example) (`node main.js` to test is). 
+Full example in [example folder](https://github.com/TerraZero/tzero-annotations/tree/master/example) (`node main.js` to test is). 
 
 ### Create an Annotation
 
     // my-constructor-annotation.js
     // ----------------------------
     'use strict'
-    const Annotation = require('esmac-annotations').Annotation;
+    const Annotation = require('tzero-annotations').Annotation;
 
     module.exports = class MyConstructorAnnotation extends Annotation {
 
@@ -68,20 +60,6 @@ Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tr
          */
         constructor(data, filePath){
           super(data, filePath)
-          /**
-           * The main value
-           *
-           * @type {String}
-           */
-          value = 'default value'
-  
-          /**
-           * An additional attribute
-           *
-           * @type {String}
-           */
-          sample = 'default value for sample'
-        
         }
         
         /**
@@ -92,7 +70,8 @@ Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tr
          * @return {void}
          */
         init: function(data){
-            // do something with data
+          // do something with data
+          this.value = data.value || "default value";
         }
         
     });
@@ -114,7 +93,7 @@ Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tr
     // ------------
 
     const path = require('path')
-    const annotations = require('ecmas-annotations')
+    const annotations = require('tzero-annotations')
 
     // create the registry
     const registry = new annotations.Registry()
@@ -126,7 +105,7 @@ Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tr
     const reader = new annotations.Reader(registry)
 
     // parse the annotations from a file, default parse ES6 file, Reader.ES5 to force ES5
-    reader.parse(path.join(__dirname, 'my-sample.js'), Reader.ES6)
+    reader.parse(path.join(__dirname, 'my-sample.js'), annotations.Reader.ES6)
 
     // get the annotations
     const definitionAnnotations = reader.definitionAnnotations
@@ -169,17 +148,5 @@ Full example in [example folder](https://github.com/jaumard/ecmas-annotations/tr
     @MyAnnotation(foo=[@MyNestedAnnotation("nested 1"), @MyNestedAnnotation("nested 2")])
 
 ## License
-[MIT](https://github.com/jaumard/ecmas-annotations/blob/master/LICENSE)
-
-[npm-image]: https://img.shields.io/npm/v/ecmas-annotations.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/ecmas-annotations
-[npm-download]: https://img.shields.io/npm/dt/ecmas-annotations.svg
-[ci-image]: https://travis-ci.org/jaumard/ecmas-annotations.svg?branch=master
-[ci-url]: https://travis-ci.org/jaumard/ecmas-annotations
-[daviddm-image]: http://img.shields.io/david/jaumard/ecmas-annotations.svg?style=flat-square
-[daviddm-url]: https://david-dm.org/jaumard/ecmas-annotations
-[codeclimate-image]: https://img.shields.io/codeclimate/github/jaumard/ecmas-annotations.svg?style=flat-square
-[codeclimate-url]: https://codeclimate.com/github/jaumard/ecmas-annotations
-[gitter-image]: http://img.shields.io/badge/+%20GITTER-JOIN%20CHAT%20%E2%86%92-1DCE73.svg?style=flat-square
-[gitter-url]: https://gitter.im/jaumard/ecmas-annotations
+[MIT](https://github.com/TerraZero/tzero-annotations/blob/master/LICENSE)
 
